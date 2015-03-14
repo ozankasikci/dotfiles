@@ -1,0 +1,6 @@
+#{{{ Mappings
+
+" can be typed even faster than jj.
+:inoremap jk <Esc>l
+
+#}}}
