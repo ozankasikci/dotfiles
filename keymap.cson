@@ -35,6 +35,10 @@
   'cmd-enter': 'editor:newline'
   'alt-cmd-enter': 'editor:newline-above'
   'cmd-e': 'recent-files-fuzzy-finder:toggle-finder'
+  'cmd-d': 'editor:duplicate-lines'
+
+'atom-text-editor[data-grammar~=ts]':
+  'alt-shift-cmd-l': 'typescript:format-code'
 
 #Atom Workspace
 'atom-workspace':

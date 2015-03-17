@@ -1,0 +1,12 @@
+#Key mappings
+map <c-d> scrollPageDown
+map <c-u> scrollPageUp
+map <c-b> scrollFullPageUp
+map <c-f> scrollFullPageDown
+map <c-i> LinkHints.activateModeToOpenIncognito
+map <c-c> closeOtherTabs
+map <c-o> LinkHints.activateModeToOpenInNewForegroundTab
+
+#Custom search engines
+w: http://www.wikipedia.org/w/index.php?titJJle=Special:Search&search=%s
+s: http://www.sozluk.net/index.php?word=%s
