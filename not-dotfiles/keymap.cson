@@ -26,6 +26,7 @@
 
 #Platfrom Darwin
 '.platform-darwin':
+  'shift-cmd-O': 'fuzzy-finder:toggle-file-finder'
   'cmd-1': 'tree-view:toggle'
 
 #Atom Workspace atom-text-edit:not[mini]!
