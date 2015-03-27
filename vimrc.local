@@ -1,2 +1,4 @@
 inoremap jk <Esc>
+inoremap <C-a> <Esc>A
+inoremap <C-i> <Esc>I
 let g:bufferline_echo=0

@@ -268,3 +268,5 @@ alias cddownloads='cd ~/Downloads'
 alias tree="find . -type f \( ! -iname '.git' \)  -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias cdhtdocs='/Applications/MAMP/htdocs'
 alias cddotfiles='cd ~/dotfiles'
+alias ta='tmux a -t'
+alias tls='tmux ls'

@@ -2,5 +2,7 @@
 
 " can be typed even faster than jj.
 :inoremap jk <Esc>l
+inoremap <C-a> <Esc>A
+inoremap <C-i> <Esc>I
 
 #}}}
