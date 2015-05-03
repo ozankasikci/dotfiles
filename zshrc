@@ -226,6 +226,12 @@ function obb() {
 
 #}}}
 
+#{{{Docker
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/ozan/.boot2docker/certs/boot2docker-vm
+#}}}
+
 #{{{ Aliases!
 
 # cd alias
@@ -270,3 +276,4 @@ alias cdhtdocs='/Applications/MAMP/htdocs'
 alias cddotfiles='cd ~/dotfiles'
 alias ta='tmux a -t'
 alias tls='tmux ls'
+alias cdws2='cd ~/metglobal/www/ws2'
