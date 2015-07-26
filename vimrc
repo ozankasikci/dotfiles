@@ -1,4 +1,44 @@
+"{{{ Vundle 
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'L9'
+Plugin 'rking/ag.vim'
+Plugin 'yegappan/mru'
+Plugin 'tomtom/tlib_vim'
+Plugin 'keith/parsec.vim'
+Plugin 'wavded/vim-stylus'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Yggdroot/indentLine'
+Plugin 'garbas/vim-snipmate'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'bling/vim-bufferline'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'xolox/vim-colorscheme-switcher'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"}}}
+
 "{{{ Mappings
+
+" changes snipmate trigger key
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
 
 let mapleader=" "
 map <leader>k :E<cr>
@@ -7,9 +47,8 @@ inoremap <C-a> <Esc>A
 inoremap <C-i> <Esc>I
 nnoremap <silent> k gk
 nnoremap <silent> j gj
-inoremap <silent> <Up> <Esc>gka
-inoremap <silent> <Down> <Esc>gja
 nnoremap <leader>s /
+nnoremap <leader>1 :NERDTreeToggle<cr>
 "}}}
 
 
@@ -21,8 +60,8 @@ let g:indentLine_char = '│'
 let g:indentLine_color_term = 234
 
 
-" 80 characters guide line
-set colorcolumn=81
+" enable 80 characters guide line
+set colorcolumn=80
 
 
 " to prevent press enter warning on start
@@ -35,7 +74,7 @@ set laststatus=2
 
 set rtp+=~/.fzf
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-set nocompatible
+"set nocompatible
 set showcmd
 filetype on
 filetype plugin on
@@ -69,8 +108,12 @@ filetype plugin indent on
 "}}}
 
 
-"{{{ Others
+"{{{ Visual Stuff
 
 color strange
+
+" change cursor's looking
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\""
 
 "}}}
