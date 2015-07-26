@@ -1,4 +1,4 @@
-"{{{ Vundle 
+"{{{ Vundle
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -54,12 +54,6 @@ nnoremap <leader>1 :NERDTreeToggle<cr>
 
 "{{{ Mics settings
 
-" indent line settings
-let g:indentLine_enabled = 1
-let g:indentLine_char = '│'
-let g:indentLine_color_term = 234
-
-
 " enable 80 characters guide line
 set colorcolumn=80
 
@@ -70,6 +64,10 @@ let g:bufferline_echo=0
 
 "For Air-line plugin
 set laststatus=2
+
+
+" vim silver searcher settings
+let g:ag_working_path_mode="r"
 
 
 set rtp+=~/.fzf
@@ -110,6 +108,18 @@ filetype plugin indent on
 
 "{{{ Visual Stuff
 
-color strange
+" set colorscheme
+color up
+
+" change string color
+hi ColorColumn guibg=#2d2d2d ctermbg=235
+
+" indent line settings
+let g:indentLine_enabled = 1
+let g:indentLine_char = '│'
+let g:indentLine_color_term = 239
+
+" current line highlight
+hi CursorLine ctermbg=235
 
 "}}}
