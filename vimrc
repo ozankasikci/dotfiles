@@ -23,6 +23,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'garbas/vim-snipmate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-bufferline'
+Plugin 'edkolev/tmuxline.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -33,6 +34,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "}}}
+
 
 "{{{ Mappings
 
@@ -57,18 +59,18 @@ nnoremap <leader>1 :NERDTreeToggle<cr>
 " enable 80 characters guide line
 set colorcolumn=80
 
-
 " to prevent press enter warning on start
 let g:bufferline_echo=0
 
-
-"For Air-line plugin
+" For Air-line plugin
 set laststatus=2
-
+let g:airline_powerline_fonts = 1
 
 " vim silver searcher settings
 let g:ag_working_path_mode="r"
 
+" to be able to yank in paste between tmux panes
+set clipboard=unnamed
 
 set rtp+=~/.fzf
 set runtimepath^=~/.vim/bundle/ctrlp.vim
