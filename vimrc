@@ -13,10 +13,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'L9'
+Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'yegappan/mru'
+Plugin 'junegunn/fzf'
 Plugin 'tomtom/tlib_vim'
 Plugin 'keith/parsec.vim'
+Plugin 'godlygeek/tabular'
 Plugin 'wavded/vim-stylus'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Yggdroot/indentLine'
@@ -25,6 +28,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-bufferline'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'xolox/vim-colorscheme-switcher'
@@ -39,8 +43,8 @@ filetype plugin indent on    " required
 "{{{ Mappings
 
 " changes snipmate trigger key
-imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
+imap <C-K> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-K> <Plug>snipMateNextOrTrigger
 
 let mapleader=" "
 map <leader>k :E<cr>
@@ -56,6 +60,9 @@ nnoremap <leader>1 :NERDTreeToggle<cr>
 
 "{{{ Mics settings
 
+" to be able to use backspace in insert mode
+set backspace=indent,eol,start
+
 " enable 80 characters guide line
 set colorcolumn=80
 
@@ -63,8 +70,10 @@ set colorcolumn=80
 let g:bufferline_echo=0
 
 " For Air-line plugin
+set guifont=Liberation_Mono_for_Powerline:h10 
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
 
 " vim silver searcher settings
 let g:ag_working_path_mode="r"
@@ -72,9 +81,13 @@ let g:ag_working_path_mode="r"
 " to be able to yank in paste between tmux panes
 set clipboard=unnamed
 
-set rtp+=~/.fzf
+" settings for ctrlp plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-"set nocompatible
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_files=0
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+set nocompatible
 set showcmd
 filetype on
 filetype plugin on
@@ -83,6 +96,7 @@ set cursorline
 set grepprg=grep\ -nH\ $*
 set autoindent
 set smarttab
+set expandtab
 set shiftwidth=2
 set softtabstop=2
 set wildmenu
@@ -121,7 +135,19 @@ let g:indentLine_enabled = 1
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 239
 
+" git gutter signs
+let g:gitgutter_sign_added = 'xx'
+let g:gitgutter_sign_modified = 'yy'
+let g:gitgutter_sign_removed = 'zz'
+let g:gitgutter_sign_removed_first_line = '^^'
+let g:gitgutter_sign_modified_removed = 'ww'
+
 " current line highlight
 hi CursorLine ctermbg=235
+
+let g:airline_theme = 'base16'
+
+" don't change tmux line theme
+let g:airline#extensions#tmuxline#enabled = 0
 
 "}}}
