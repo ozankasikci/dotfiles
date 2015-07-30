@@ -84,7 +84,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='hybridline'
+let g:airline_theme='jellybeans'
 
 " vim silver searcher settings
 let g:ag_working_path_mode="r"
