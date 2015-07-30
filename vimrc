@@ -13,17 +13,21 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'L9'
-Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'yegappan/mru'
 Plugin 'junegunn/fzf'
+Plugin 'kien/ctrlp.vim'
 Plugin 'tomtom/tlib_vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'keith/parsec.vim'
+Plugin 'tpope/vim-repeat'
 Plugin 'godlygeek/tabular'
 Plugin 'wavded/vim-stylus'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Yggdroot/indentLine'
-Plugin 'garbas/vim-snipmate'
+Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-bufferline'
 Plugin 'edkolev/tmuxline.vim'
@@ -42,9 +46,11 @@ filetype plugin indent on    " required
 
 "{{{ Mappings
 
-" changes snipmate trigger key
-imap <C-K> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-K> <Plug>snipMateNextOrTrigger
+" Ulti-snips configuration
+let g:UltiSnipsExpandTrigger="<C-K>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit ="vertical"
 
 let mapleader=" "
 map <leader>k :E<cr>
@@ -77,6 +83,8 @@ set guifont=Liberation_Mono_for_Powerline:h10
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='hybridline'
 
 " vim silver searcher settings
 let g:ag_working_path_mode="r"
@@ -164,8 +172,6 @@ let g:gitgutter_sign_modified_removed = 'ww'
 
 " current line highlight
 hi CursorLine ctermbg=235
-
-let g:airline_theme = 'base16'
 
 " don't change tmux line theme
 let g:airline#extensions#tmuxline#enabled = 0
