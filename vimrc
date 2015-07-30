@@ -55,6 +55,9 @@ nnoremap <silent> k gk
 nnoremap <silent> j gj
 nnoremap <leader>s /
 nnoremap <leader>1 :NERDTreeToggle<cr>
+nnoremap <C-l> :b#<cr>
+nnoremap <C-m> :MRU<cr>
+
 "}}}
 
 
@@ -70,7 +73,7 @@ set colorcolumn=80
 let g:bufferline_echo=0
 
 " For Air-line plugin
-set guifont=Liberation_Mono_for_Powerline:h10 
+set guifont=Liberation_Mono_for_Powerline:h10
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
@@ -109,6 +112,23 @@ set incsearch
 set hlsearch
 set nohidden
 highlight MatchParen ctermbg=4
+
+"}}}
+
+
+"{{{ Tmux settings
+
+if &term =~ '^screen' && exists('$TMUX')
+    set mouse+=a
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+    " tmux will send xterm-style keys when xterm-keys is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+    autocmd VimEnter * Tmuxline vim_statusline_3
+endif
 
 "}}}
 
