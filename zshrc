@@ -1,13 +1,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export LC_ALL=en_US.utf-8 
-export LANG="$LC_ALL"
+export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="juanghurtado"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -25,10 +26,10 @@ ZSH_THEME="juanghurtado"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -49,12 +50,13 @@ ZSH_THEME="juanghurtado"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="$HOME/.node/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -224,28 +226,21 @@ function obb() {
     open $giturl
 }
 
-#}}}
 
-#{{{Docker
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/ozan/.boot2docker/certs/boot2docker-vm
-#}}}
+# vim related stuff
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vimfzf='vim $(fzf)'
 
-#{{{ Aliases!
+# tmux related stuff
+alias tmux="tmux -2"
 
-# cd alias
-alias cddhr='cd ~/metglobal/www/dhr.com/httpdocs'
-alias cddhrs='cd ~/metglobal/www/dhr.com/httpsdocs'
-alias cdhotelspro='cd ~/metglobal/www/hotelspro.com/httpdocs/'
-alias cdhotelspros='cd ~/metglobal/www/hotelspro.com/httpsdocs/'
-alias cdotelcom='cd ~/metglobal/www/otel.com/httpdocs/'
-alias cdotelcoms='cd ~/metglobal/www/otel.com/httpsdocs/'
-alias cdlibrary='cd ~/metglobal/www/library'
-alias cdwb='cd ~/metglobal/www/wb'
-alias cdvagrant='cd ~/metglobal/pltfrm-dev-env-up'
-alias cdmetglobal='cd ~/metglobal/'
-alias cdmetglobalrepo='cd ~/metglobal/www/metglobal.com/'
+# vagrant alias
+alias vup='vagrant up'
+alias vh='vagrant halt'
+alias vs='vagrant suspend'
+alias vr='vagrant resume'
+alias vst='vagrant status'
 
 # general alias
 alias la="ls -la"
@@ -257,23 +252,11 @@ alias eideav='vim ~/.ideavimrc'
 alias zshthemes='cd ~/.oh-my-zsh/themes'
 alias c='clear'
 alias h='history'
-
-# vagrant alias
-alias vup='vagrant up'
-alias vh='vagrant halt'
-alias vs='vagrant suspend'
-alias vr='vagrant resume'
-alias vst='vagrant status'
-
-# general alias
 alias cddocs='cd ~/Documents'
 alias cddl='cd ~/Downloads'
 alias cddesk='cd ~/Desktop'
 alias cdapps='cd /Applications/'
 alias cddownloads='cd ~/Downloads'
-alias tree="find . -type f \( ! -iname '.git' \)  -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias cdhtdocs='/Applications/MAMP/htdocs'
 alias cddotfiles='cd ~/dotfiles'
 alias ta='tmux a -t'
 alias tls='tmux ls'
-alias cdws2='cd ~/metglobal/www/ws2'
