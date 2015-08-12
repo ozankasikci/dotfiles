@@ -61,6 +61,7 @@ nnoremap <silent> k gk
 nnoremap <silent> j gj
 nnoremap <leader>s /
 nnoremap <leader>1 :NERDTreeToggle<cr>
+nnoremap <leader>l :CoffeeLint <bar> cwindow<cr>
 nnoremap <C-l> :b#<cr>
 nnoremap <C-m> :MRU<cr>
 
@@ -98,6 +99,9 @@ let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files=0
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+" to be able to open required node files pressing gf
+set suffixesadd+=.coffee
+
 set nocompatible
 set showcmd
 filetype on
@@ -107,7 +111,7 @@ set cursorline
 set grepprg=grep\ -nH\ $*
 set autoindent
 set smarttab
-set expandtab
+"set expandtab
 set shiftwidth=2
 set softtabstop=2
 set wildmenu
@@ -153,7 +157,8 @@ filetype plugin indent on
 "{{{ Visual Stuff
 
 " set colorscheme
-color up
+"color up
+color strange
 
 " change string color
 hi ColorColumn guibg=#2d2d2d ctermbg=235
