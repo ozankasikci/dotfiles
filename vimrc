@@ -111,9 +111,10 @@ set cursorline
 set grepprg=grep\ -nH\ $*
 set autoindent
 set smarttab
-"set expandtab
+set expandtab
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
 set wildmenu
 set wildmode=list:longest,full
 set mouse=a
@@ -140,6 +141,14 @@ if &term =~ '^screen' && exists('$TMUX')
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
     autocmd VimEnter * Tmuxline vim_statusline_3
+    let g:tmuxline_preset = {
+      \'a'    : '#S',
+        \'c'    : ['#(whoami)', '#(uptime | cud -d " " -f 1,2,3)'],
+        \'win'  : ['#I', '#W'],
+        \'cwin' : ['#I', '#W', '#F'],
+        \'x'    : '#(/usr/bin/battery -t)',
+        \'y'    : ['%R', '%a', '%e-%B'],
+        \'z'    : '#H'}
 endif
 
 "}}}
