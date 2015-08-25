@@ -124,6 +124,7 @@ set smartcase
 set incsearch
 set hlsearch
 set nohidden
+set relativenumber
 highlight MatchParen ctermbg=4
 
 "}}}
