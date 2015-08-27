@@ -168,10 +168,14 @@ filetype plugin indent on
 
 " set colorscheme
 "color up
-color strange
+"color strange
+color apprentice
 
-" change string color
-hi ColorColumn guibg=#2d2d2d ctermbg=235
+" change ColorColumn color
+hi ColorColumn guibg=#2d2d2d ctermbg=236
+
+" current line highlight
+hi CursorLine ctermbg=235
 
 " indent line settings
 let g:indentLine_enabled = 1
@@ -184,9 +188,6 @@ let g:gitgutter_sign_modified = 'yy'
 let g:gitgutter_sign_removed = 'zz'
 let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_modified_removed = 'ww'
-
-" current line highlight
-hi CursorLine ctermbg=235
 
 " don't change tmux line theme
 let g:airline#extensions#tmuxline#enabled = 0
