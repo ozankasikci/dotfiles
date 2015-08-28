@@ -180,7 +180,7 @@ hi CursorLine ctermbg=235
 " indent line settings
 let g:indentLine_enabled = 1
 let g:indentLine_char = '│'
-let g:indentLine_color_term = 239
+let g:indentLine_color_term = 235
 
 " git gutter signs
 let g:gitgutter_sign_added = 'xx'
