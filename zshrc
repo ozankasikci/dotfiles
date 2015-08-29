@@ -193,15 +193,15 @@ function obb() {
     elif [ "$1" = "pr" ]
         then
             target="pull-requests"
-    
+
     elif [ "$1" = "branch" ]
-        then 
+        then
             target="branch/$(git symbolic-ref HEAD 2>/dev/null)" ||
             target="(unnamed branch)" #detached HEAD
             target=${target/refs\/heads\//""}
 
     elif [ "$1" = "branches" ]
-        then 
+        then
             target="branches"
 
     elif [ "$1" = "cpr" ]
@@ -209,10 +209,10 @@ function obb() {
             target="pull-request/new"
 
     else
-        echo "  Usage: 
-        obb repo    (for repo) \n 
+        echo "  Usage:
+        obb repo    (for repo) \n
         obb cpr     (for creation pull request) \n
-        obb pr      (for pull requests page) \n 
+        obb pr      (for pull requests page) \n
         obb branch  (for branch) \n
         obb branches (for branches)"
         return;
@@ -234,6 +234,8 @@ alias vimfzf='vim $(fzf)'
 
 # tmux related stuff
 alias tmux="tmux -2"
+alias ta='tmux a -t'
+alias tls='tmux ls'
 
 # vagrant alias
 alias vup='vagrant up'
@@ -248,6 +250,7 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 alias ev='vim ~/.vimrc'
 alias sv='source ~/.vim'
+alias cddotfiles='cd ~/dotfiles'
 alias eideav='vim ~/.ideavimrc'
 alias zshthemes='cd ~/.oh-my-zsh/themes'
 alias c='clear'
@@ -257,6 +260,10 @@ alias cddl='cd ~/Downloads'
 alias cddesk='cd ~/Desktop'
 alias cdapps='cd /Applications/'
 alias cddownloads='cd ~/Downloads'
-alias cddotfiles='cd ~/dotfiles'
-alias ta='tmux a -t'
-alias tls='tmux ls'
+
+# sourcing aliases that should kept hidden
+if [ -f ~/.aliases  ]; then
+  source ~/.aliases
+else
+  print '404: ~/.aliases not found.'
+fi

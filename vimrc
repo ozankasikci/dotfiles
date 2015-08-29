@@ -189,7 +189,7 @@ let g:gitgutter_sign_removed = 'zz'
 let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_modified_removed = 'ww'
 
-" don't change tmux line theme
+" don't change tmuxLine theme
 let g:airline#extensions#tmuxline#enabled = 0
 
 "}}}
