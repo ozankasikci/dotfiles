@@ -65,6 +65,12 @@ nnoremap <leader>l :CoffeeLint <bar> cwindow<cr>
 nnoremap <C-l> :b#<cr>
 nnoremap <C-m> :MRU<cr>
 
+" quick resize panes
+if bufwinnr(1)
+  map <C-Up> <C-W><
+  map <C-Down> <C-W>>
+endif
+
 "}}}
 
 
