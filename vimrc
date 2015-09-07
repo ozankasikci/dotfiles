@@ -166,21 +166,30 @@ filetype plugin indent on
 
 "{{{ Visual Stuff
 
-" set colorscheme
-"color up
-"color strange
-color apprentice
-
-" change ColorColumn color
-hi ColorColumn guibg=#2d2d2d ctermbg=236
-
-" current line highlight
-hi CursorLine ctermbg=235
-
 " indent line settings
 let g:indentLine_enabled = 1
 let g:indentLine_char = '│'
-let g:indentLine_color_term = 235
+
+" set colorscheme
+"color up
+"color strange
+"color apprentice
+color sol-term
+
+" for apprentice
+"hi ColorColumn guibg=#2d2d2d ctermbg=236
+" for sol-term
+hi ColorColumn guibg=#2d2d2d ctermbg=254
+
+" for apprentice
+"hi CursorLine ctermbg=235
+" for sol-term
+hi CursorLine ctermbg=231
+
+" for apprentice
+"let g:indentLine_color_term = 235
+" for sol-term
+let g:indentLine_color_term = 253
 
 " git gutter signs
 let g:gitgutter_sign_added = 'xx'
