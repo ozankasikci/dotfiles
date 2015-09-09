@@ -179,23 +179,23 @@ let g:indentLine_char = '│'
 " set colorscheme
 "color up
 "color strange
-"color apprentice
-color sol-term
+color apprentice
+"color sol-term
 
 " for apprentice
-"hi ColorColumn guibg=#2d2d2d ctermbg=236
+hi ColorColumn guibg=#2d2d2d ctermbg=236
 " for sol-term
-hi ColorColumn guibg=#2d2d2d ctermbg=254
+"hi ColorColumn guibg=#2d2d2d ctermbg=254
 
 " for apprentice
-"hi CursorLine ctermbg=235
+hi CursorLine ctermbg=235
 " for sol-term
-hi CursorLine ctermbg=231
+"hi CursorLine ctermbg=231
 
 " for apprentice
-"let g:indentLine_color_term = 235
+let g:indentLine_color_term = 235
 " for sol-term
-let g:indentLine_color_term = 253
+"let g:indentLine_color_term = 253
 
 " git gutter signs
 let g:gitgutter_sign_added = 'xx'
