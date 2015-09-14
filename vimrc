@@ -179,8 +179,9 @@ let g:indentLine_char = '│'
 " set colorscheme
 "color up
 "color strange
-color apprentice
+"color apprentice
 "color sol-term
+color hybrid
 
 " for apprentice
 hi ColorColumn guibg=#2d2d2d ctermbg=236
