@@ -32,6 +32,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-bufferline'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'takac/vim-spotifysearch'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -181,7 +182,8 @@ let g:indentLine_char = '│'
 "color strange
 "color apprentice
 "color sol-term
-color hybrid
+"color hybrid
+color coffee
 
 " for apprentice
 hi ColorColumn guibg=#2d2d2d ctermbg=236
@@ -207,5 +209,15 @@ let g:gitgutter_sign_modified_removed = 'ww'
 
 " don't change tmux-line theme
 let g:airline#extensions#tmuxline#enabled = 0
+
+" clear git gutter background
+highlight clear SignColumn
+
+" change git gutter colors
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green guifg=darkgreen
+highlight GitGutterChange ctermfg=yellow guifg=darkyellow
+highlight GitGutterDelete ctermfg=red guifg=darkred
+highlight GitGutterChangeDelete ctermfg=yellow guifg=darkyellow
 
 "}}}
