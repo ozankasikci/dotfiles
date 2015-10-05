@@ -210,9 +210,6 @@ let g:gitgutter_sign_modified_removed = 'ww'
 " don't change tmux-line theme
 let g:airline#extensions#tmuxline#enabled = 0
 
-" clear git gutter background
-highlight clear SignColumn
-
 " change git gutter colors
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green guifg=darkgreen
