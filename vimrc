@@ -109,6 +109,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " to be able to open required node files pressing gf
 set suffixesadd+=.coffee
 
+set lazyredraw
 set nocompatible
 set showcmd
 filetype on
@@ -205,7 +206,6 @@ let g:gitgutter_sign_added = 'xx'
 let g:gitgutter_sign_modified = 'yy'
 let g:gitgutter_sign_removed = 'zz'
 let g:gitgutter_sign_removed_first_line = '^^'
-let g:gitgutter_sign_modified_removed = 'ww'
 
 " don't change tmux-line theme
 let g:airline#extensions#tmuxline#enabled = 0
