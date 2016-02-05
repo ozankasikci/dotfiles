@@ -1,64 +1,23 @@
 #!/bin/bash
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files="zshrc tmux.conf ideavimrc oh-my-zsh vimrc.bundles.local"    # list of files/folders to symlink in homedir
+DIR=~/dotfiles                    # dotfiles directory
+OLD_DIR=~/dotfiles_old             # old dotfiles backup directory
+FILES="zshrc tmux.conf ideavimrc oh-my-zsh vimrc.bundles.local"    # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
-echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
-mkdir -p $olddir
+echo -n "Creating $OLD_DIR for backup of any existing dotfiles in ~ ..."
+mkdir -p $OLD_DIR
 echo "done"
 
 # change to the dotfiles directory
-echo -n "Changing to the $dir directory ..."
-cd $dir
+echo -n "Changing to the $DIR directory ..."
+cd $DIR
 echo "done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-for file in $files; do
-echo "Moving any existing dotfiles from ~ to $olddir"
-mv ~/.$file ~/dotfiles_old/
-echo "Creating symlink to $file in home directory."
-ln -s $dir/$file ~/.$file
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $FILES
+for FILE in $FILES; do
+echo "Moving any existing dotfiles from ~ to $OLD_DIR"
+mv ~/.$FILE $OLD_DIR/
+echo "Creating symlink to $FILE in home directory."
+ln -s $DIR/$FILE ~/.$FILE
 done
-
-install_zsh () {
-    # Test to see if zshell is installed.  If it is:
-    if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
-        # Clone my oh-my-zsh repository from GitHub only if it isn't already present
-        if [[ ! -d $dir/oh-my-zsh/ ]]; then
-            git clone http://github.com/robbyrussell/oh-my-zsh.git
-        fi
-        # Set the default shell to zsh if it isn't currently set to zsh
-        if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-            chsh -s $(which zsh)
-        fi
-    else
-        # If zsh isn't installed, get the platform of the current machine
-        platform=$(uname);
-        # If the platform is Linux, try an apt-get to install zsh and then recurse
-        if [[ $platform == 'Linux' ]]; then
-            sudo apt-get install zsh
-            install_zsh
-            # If the platform is OS X, tell the user to install zsh :)
-        elif [[ $platform == 'Darwin' ]]; then
-            echo "Please install zsh, then re-run this script!"
-            exit
-        fi
-    fi
-}
-
-install_git () {
-    platform=$(uname);
-    git --version 2>&1 >/dev/null
-    GIT_IS_AVAILABLE=$?
-
-    if [[ $platform == 'Linux' ]]; then
-        sudo apt-get install git
-    elif [[ $platform == 'Darwin' ]]; then
-        command -v git >/dev/null 2>&1 || { echo "Please install git, then re-run this script!" >&2; exit 1; }
-    fi
-}       
-
-install_git
-install_zsh
