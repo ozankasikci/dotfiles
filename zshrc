@@ -229,7 +229,7 @@ function obb() {
 
 # vim related stuff
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+[[ `uname` == 'Darwin'  ]] && alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vimfzf='vim $(fzf)'
 
 # tmux related stuff
