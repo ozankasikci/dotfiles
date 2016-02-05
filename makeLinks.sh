@@ -2,7 +2,7 @@
 
 DIR=~/dotfiles                    # dotfiles directory
 OLD_DIR=~/dotfiles_old             # old dotfiles backup directory
-FILES="zshrc tmux.conf ideavimrc oh-my-zsh vimrc.bundles.local"    # list of files/folders to symlink in homedir
+FILES="zshrc tmux.conf ideavimrc vimrc.bundles.local"    # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
 echo -n "Creating $OLD_DIR for backup of any existing dotfiles in ~ ..."
