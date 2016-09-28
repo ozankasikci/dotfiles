@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go/
+export GOBIN=$HOME/go/bin
 export PATH=$GOPATH/bin:$PATH
 export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
