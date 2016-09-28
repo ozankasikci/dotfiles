@@ -55,7 +55,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
